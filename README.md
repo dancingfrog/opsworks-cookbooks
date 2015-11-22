@@ -1,6 +1,7 @@
 opsworks-cookbooks
 ==================
 
+<<<<<<< HEAD
 **These are the standard Chef cookbooks used by AWS OpsWorks.**
 
 If you want to override any template (like the Rails database.yml or the Apache
