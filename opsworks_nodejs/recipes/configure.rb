@@ -12,4 +12,15 @@ node[:deploy].each do |application, deploy|
     group deploy[:group]
     variables(:database => deploy[:database], :memcached => deploy[:memcached], :layers => node[:opsworks][:layers])
   end
+
+  log 'message' do
+	message 'Create config.json in /srv/www/feedback_debug/current/modules'
+	level :info
+  end
+
+  template "/srv/www/feedback_debug/current/modules/config.json" do
+	cookbook 'opsworks_nodejs'
+    source 'config.json.erb'
+    mode '0660'
+  end
 end
