@@ -12,13 +12,17 @@ node[:deploy].each do |application, deploy|
     group deploy[:group]
     variables(:database => deploy[:database], :memcached => deploy[:memcached], :layers => node[:opsworks][:layers])
   end
-
-#  log 'message' do
-#	message 'Create config.json in /srv/www/feedback_debug/current/modules'
-#	level :info
-#  end
 	
-  Chef::Log.info("Create config.json in /srv/www/feedback_debug/current/modules")
+  Chef::Log.info("Create modules dir in /srv/www/feedback_admin")
+
+  directory "/srv/www/feedback_admin/modules" do
+	action :create
+    mode '0755'
+    owner deploy[:user]
+    group deploy[:group]
+  end
+	
+  Chef::Log.info("Create config.json in /srv/www/feedback_admin/modules")
 
   template "/srv/www/feedback_admin/modules/config.json" do
 	cookbook 'opsworks_nodejs'
