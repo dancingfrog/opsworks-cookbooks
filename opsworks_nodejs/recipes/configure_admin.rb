@@ -41,5 +41,25 @@ node[:deploy].each do |application, deploy|
     owner deploy[:user]
     group deploy[:group]
   end
+	
+  Chef::Log.info("Create Contact.js in /srv/www/feedback_admin/releases/modules")
+
+  template "/srv/www/feedback_admin/releases/modules/Contact.js" do
+	cookbook 'opsworks_nodejs'
+    source 'Contact.js.erb'
+    mode '0644'
+    owner deploy[:user]
+    group deploy[:group]
+  end
+	
+  Chef::Log.info("Create Request.js in /srv/www/feedback_admin/releases/modules")
+
+  template "/srv/www/feedback_admin/releases/modules/Request.js" do
+	cookbook 'opsworks_nodejs'
+    source 'Request.js.erb'
+    mode '0644'
+    owner deploy[:user]
+    group deploy[:group]
+  end
   
 end
