@@ -61,5 +61,15 @@ node[:deploy].each do |application, deploy|
     owner deploy[:user]
     group deploy[:group]
   end
+	
+  Chef::Log.info("Create Summary.js in /srv/www/feedback_admin/releases/modules")
+
+  template "/srv/www/feedback_admin/releases/modules/Summary.js" do
+	cookbook 'opsworks_nodejs'
+    source 'Summary.js.erb'
+    mode '0644'
+    owner deploy[:user]
+    group deploy[:group]
+  end
   
 end
