@@ -20,18 +20,10 @@ node[:deploy].each do |application, deploy|
 	
   Chef::Log.info("Create config.json in /srv/www/feedback_debug/current/modules")
 
-  template "/srv/www/feedback_debug/current/modules/config.json" do
+  template "/srv/www/feedback_admin/modules/config.json" do
 	cookbook 'opsworks_nodejs'
     source 'config.json.erb'
     mode '0644'
-    owner deploy[:user]
-    group deploy[:group]
-  end
-	
-  Chef::Log.info("Remove config.js in /srv/www/feedback_debug/current/modules")
-
-  file "/srv/www/feedback_debug/current/modules/config.js" do
-	action :delete
     owner deploy[:user]
     group deploy[:group]
   end

@@ -1,21 +1,35 @@
 {
-	"apiKey": "1fd9aada-812a-40f1-8fb7-4601e2150251",
+    "apiKey": "1fd9aada-812a-40f1-8fb7-4601e2150251",
 	"application" : {
 		"title" 	: "Maponics© Feedback API",
 		"header"	: "Maponics© Feedback Application",
-		"footer" 	: "",
+		"footer" 	: "Copyright (c) 2015 Maponics. All rights reserved.",
 		"copyright" : "Copyright (c) 2015 Maponics. All rights reserved.",
 		"parentSite": "http://www.maponics.com"
 	},
+    "attachments": [
+        "id",
+        "type",
+        "url",
+        "auth",
+        "contact",
+        "modified",
+		"hidden"
+    ],
+    "domain": "localhost",
+    "port":   80,
+    "longWait":  25000,
+    "shortWait": 2500,
+
     "feedback.maponics.com": {
         "host": "172.31.32.247",
         "instance": "maponics_feedback",
         "username": "maponics",
         "password": "maponics2013",
-		"contact": {
+        "contact": {
             "schema": "contact",
             "table": "Contacts"
-		},
+        },
         "manager": {
             "schema": "contact",
             "table": "Managers"
@@ -36,22 +50,18 @@
             "schema": "resource",
             "table": "Notes"
         },
-		"resource": {
+        "resource": {
             "schema": "resource",
             "table": "Summary"
-		},
+        },
         "shadow": {
             "schema": "shadow",
             "table": "Words"
-        },
-        "reveal": {
-            "instance": "maponics_demo",
-            "schema": "maponics_demo"
         }
     },
     "localhost": {
         "host": "172.31.32.247",
-        "instance": "maponics_feedback",
+        "instance": "maponics_source",
         "username": "maponics",
         "password": "maponics2013",
         "contact": {
@@ -85,143 +95,13 @@
         "shadow": {
             "schema": "shadow",
             "table": "Words"
-        },
-        "reveal": {
-            "instance": "maponics_demo",
-            "schema": "maponics_demo"
         }
     },
-    "sandbox.maponics.com": {
+    "52.73.30.187": {
         "host": "172.31.32.247",
         "instance": "maponics_source",
         "username": "maponics",
         "password": "maponics2013",
-		"contact": {
-            "schema": "contact",
-            "table": "Contacts"
-		},
-        "manager": {
-            "schema": "contact",
-            "table": "Managers"
-        },
-        "organization": {
-            "schema": "contact",
-            "table": "Organizations"
-        },
-        "request": {
-            "schema": "contact",
-            "table": "Requests"
-        },
-        "developer": {
-            "schema": "developer",
-            "table": "Developers"
-        },
-        "note": {
-            "schema": "resource",
-            "table": "Notes"
-        },
-		"resource": {
-            "schema": "resource",
-            "table": "Summary"
-		},
-        "shadow": {
-            "schema": "shadow",
-            "table": "Words"
-        },
-        "reveal": {
-            "instance": "maponics_demo",
-            "schema": "maponics_demo"
-        }
-    },
-    "54.172.219.158": {
-        "host": "172.31.32.247",
-        "instance": "maponics_source",
-        "username": "maponics",
-        "password": "maponics2013",
-		"contact": {
-            "schema": "contact",
-            "table": "Contacts"
-		},
-        "manager": {
-            "schema": "contact",
-            "table": "Managers"
-        },
-        "organization": {
-            "schema": "contact",
-            "table": "Organizations"
-        },
-        "request": {
-            "schema": "contact",
-            "table": "Requests"
-        },
-        "developer": {
-            "schema": "developer",
-            "table": "Developers"
-        },
-        "note": {
-            "schema": "resource",
-            "table": "Notes"
-        },
-		"resource": {
-            "schema": "resource",
-            "table": "Summary"
-		},
-        "shadow": {
-            "schema": "shadow",
-            "table": "Words"
-        },
-        "reveal": {
-            "instance": "maponics_demo",
-            "schema": "maponics_demo"
-        }
-    },
-    "52.91.70.48": {
-        "host": "172.31.32.247",
-        "instance": "maponics_source",
-        "username": "maponics",
-        "password": "maponics2013",
-		"contact": {
-            "schema": "contact",
-            "table": "Contacts"
-		},
-        "manager": {
-            "schema": "contact",
-            "table": "Managers"
-        },
-        "organization": {
-            "schema": "contact",
-            "table": "Organizations"
-        },
-        "request": {
-            "schema": "contact",
-            "table": "Requests"
-        },
-        "developer": {
-            "schema": "developer",
-            "table": "Developers"
-        },
-        "note": {
-            "schema": "resource",
-            "table": "Notes"
-        },
-		"resource": {
-            "schema": "resource",
-            "table": "Summary"
-		},
-        "shadow": {
-            "schema": "shadow",
-            "table": "Words"
-        },
-        "reveal": {
-            "instance": "maponics_demo",
-            "schema": "maponics_demo"
-        }
-    },
-	"67.193.252.216": {
-        "host": "54.172.219.158",
-        "instance": "maponics_source",
-        "username": "maponics",
-        "password": "maponics2013",
         "contact": {
             "schema": "contact",
             "table": "Contacts"
@@ -253,256 +133,195 @@
         "shadow": {
             "schema": "shadow",
             "table": "Words"
-        },
-        "reveal": {
-            "instance": "maponics_demo",
-            "schema": "maponics_demo"
-        }
-    }, 
-    "127.0.0.1": {
-        "host": "54.172.219.158",
-        "instance": "maponics_source",
-        "username": "maponics",
-        "password": "maponics2013",
-        "contact": {
-            "schema": "contact",
-            "table": "Contacts"
-        },
-        "manager": {
-            "schema": "contact",
-            "table": "Managers"
-        },
-        "organization": {
-            "schema": "contact",
-            "table": "Organizations"
-        },
-        "request": {
-            "schema": "contact",
-            "table": "Requests"
-        },
-        "developer": {
-            "schema": "developer",
-            "table": "Developers"
-        },
-        "note": {
-            "schema": "resource",
-            "table": "Notes"
-        },
-        "resource": {
-            "schema": "resource",
-            "table": "Summary"
-        },
-        "shadow": {
-            "schema": "shadow",
-            "table": "Words"
-        },
-        "reveal": {
-            "instance": "maponics_demo",
-            "schema": "maponics_demo"
         }
     },
-    "maponics.dev": { 
-        "host": "54.174.24.145",
-        "instance": "maponics_source",
+    "reveal": {
+        "host": "172.31.46.248",
         "username": "maponics",
         "password": "maponics2013",
-        "contact": {
-            "schema": "contact",
-            "table": "Contacts"
-        },
-        "manager": {
-            "schema": "contact",
-            "table": "Managers"
-        },
-        "organization": {
-            "schema": "contact",
-            "table": "Organizations"
-        },
-        "request": {
-            "schema": "contact",
-            "table": "Requests"
-        },
-        "developer": {
-            "schema": "developer",
-            "table": "Developers"
-        },
-        "note": {
-            "schema": "resource",
-            "table": "Notes"
-        },
-        "resource": {
-            "schema": "resource",
-            "table": "Summary"
-        },
-        "shadow": {
-            "schema": "shadow",
-            "table": "Words"
-        },
-        "reveal": {
-            "instance": "maponics_demo",
-            "schema": "maponics_demo"
-        }
-    },
-    "layers": [
-        {
-            "select": {
-                "attr": "nid, neighborhd, place, state"
+        "instance": "maponics_demo",
+        "schema": "maponics_demo",
+        "layers": [
+            {
+                "attributes": [
+                    "nid", "neighborhd", "place", "state", "relver"
+                ],
+                "geometry": "wkb_geometry",
+                "table": "x_nbr_m_reveal",
+                "id": "nid",
+                "feature": "neighborhd",
+                "name": "Neighborhood Macro"
             },
-            "geometry": "wkb_geometry",
-            "table": "2143_NBR2_N_Context",
-            "id": "nid",
-            "feature": "neighborhd",
-            "name": "Neighborhood"
-        },
-        {
-            "select": {
-                "attr": "nid, neighborhd, place, state"
+            {
+                "attributes": [
+                    "nid", "neighborhd", "place", "state", "relver"
+                ],
+                "geometry": "wkb_geometry",
+                "table": "x_nbr_n_reveal",
+                "id": "nid",
+                "feature": "neighborhd",
+                "name": "Neighborhood"
             },
-            "geometry": "wkb_geometry",
-            "table": "2143_NBR2_M_Context",
-            "id": "nid",
-            "feature": "neighborhd",
-            "name": "Neighborhood Macro"
-        },
-        {
-            "select": {
-                "attr": "nid, neighborhd, place, state"
+            {
+                "attributes": [
+                    "nid", "neighborhd", "place", "state", "relver"
+                ],
+                "geometry": "wkb_geometry",
+                "table": "x_nbr_r_reveal",
+                "id": "nid",
+                "feature": "neighborhd",
+                "name": "Neighborhood Residential"
             },
-            "geometry": "wkb_geometry",
-            "table": "2143_NBR2_R_Context",
-            "id": "nid",
-            "feature": "neighborhd",
-            "name": "Neighborhood Residential"
-        },
-        {
-            "select": {
-                "attr": "nid, neighborhd, place, state"
+            {
+                "attributes": [
+                    "nid", "neighborhd", "place", "state", "relver"
+                ],
+                "geometry": "wkb_geometry",
+                "table": "x_nbr_s_reveal",
+                "id": "nid",
+                "feature": "neighborhd",
+                "name": "Neighborhood Subdivision"
             },
-            "geometry": "wkb_geometry",
-            "table": "2143_NBR2_S_Context",
-            "id": "nid",
-            "feature": "neighborhd",
-            "name": "Neighborhood Subdivision"
-        },
-        {
-            "select": {
-                "attr": "nid, neighborhd, state"
+            {
+                "attributes": [
+                    "nid", "neighborhd", "metro", "state", "relver"
+                ],
+                "geometry": "wkb_geometry",
+                "table": "x_res_reveal",
+                "id": "nid",
+                "feature": "neighborhd",
+                "name": "Residential"
             },
-            "geometry": "wkb_geometry",
-            "table": "1143_Residential_Context",
-            "id": "nid",
-            "feature": "neighborhd",
-            "name": "Residential"
-        },
-        {
-            "select": {
-                "attr": "mid, hospital, metro"
+            {
+                "attributes": [
+                    "obj_id", "obj_name", "metro", "relver"
+                ],
+                "geometry": "wkb_geometry",
+                "table": "x_hsp_reveal",
+                "id": "obj_id",
+                "feature": "obj_name",
+                "name": "Hospital"
             },
-            "geometry": "wkb_geometry",
-            "table": "A_Hospitals",
-            "id": "mid",
-            "feature": "hospital",
-            "name": "Hospital"
-        },
-        {
-            "select": {
-                "attr": "mx_id, obj_name, ed_level, stu_pop, cntrysub_e"
+            {
+                "attributes": [
+                    "obj_id", "obj_name", "metro", "relver"
+                ],
+                "geometry": "wkb_geometry",
+                "table": "x_sch_grn_reveal",
+                "id": "obj_id",
+                "feature": "obj_name",
+                "name": "School Ground"
             },
-            "geometry": "wkb_geom",
-            "table": "b_sgs_full",
-            "id": "mx_id",
-            "feature": "obj_name",
-            "name": "School Ground"
-        },
-        {
-            "select": {
-                "attr": "mx_id, sch_name, ed_level, nces_schid, nces_disid"
+            {
+                "attributes": [
+                    "mx_id", "sch_name", "district", "location", "relver"
+                ],
+                "geometry": "wkb_geometry",
+                "table": "x_sch_pnt_h_reveal",
+                "id": "mx_id",
+                "feature": "sch_name",
+                "name": "High School Point"
             },
-            "geometry": "wkb_geometry",
-            "table": "1142-SchoolPoints-High",
-            "id": "mx_id",
-            "feature": "sch_name",
-            "name": "High School Point"
-        },
-        {
-            "select": {
-                "attr": "mx_id, sch_name, ed_level, nces_schid, nces_disid"
+            {
+                "attributes": [
+                    "mx_id", "sch_name", "district", "location", "relver"
+                ],
+                "geometry": "wkb_geometry",
+                "table": "x_sch_pnt_m_reveal",
+                "id": "mx_id",
+                "feature": "sch_name",
+                "name": "Middle School Point"
             },
-            "geometry": "wkb_geometry",
-            "table": "1142-SchoolPoints-Middle",
-            "id": "mx_id",
-            "feature": "sch_name",
-            "name": "Middle School Point"
-        },
-        {
-            "select": {
-                "attr": "mx_id, sch_name, ed_level, nces_schid, nces_disid"
+            {
+                "attributes": [
+                    "mx_id", "sch_name", "district", "location", "relver"
+                ],
+                "geometry": "wkb_geometry",
+                "table": "x_sch_pnt_p_reveal",
+                "id": "mx_id",
+                "feature": "sch_name",
+                "name": "Primary School Point"
             },
-            "geometry": "wkb_geometry",
-            "table": "1142-SchoolPoints-Primary",
-            "id": "mx_id",
-            "feature": "sch_name",
-            "name": "Primary School Point"
-        },
-        {
-            "select": {
-                "attr": "mx_id, sch_name, ed_level, nces_schid, nces_disid"
+            {
+                "attributes": [
+                    "mx_id", "sch_name", "nces_schid", "nces_disid", "relver"
+                ],
+                "geometry": "wkb_geometry",
+                "table": "x_saz_h_reveal",
+                "id": "mx_id",
+                "feature": "sch_name",
+                "name": "High School Attendance Zone"
             },
-            "geometry": "wkb_geometry",
-            "table": "D_SAZ_H_Context",
-            "id": "mx_id",
-            "feature": "sch_name",
-            "name": "High School Attendance Zone"
-        },
-        {
-            "select": {
-                "attr": "mx_id, sch_name, ed_level, nces_schid, nces_disid"
+            {
+                "attributes": [
+                    "mx_id", "sch_name", "nces_schid", "nces_disid", "relver"
+                ],
+                "geometry": "wkb_geometry",
+                "table": "x_saz_m_reveal",
+                "id": "mx_id",
+                "feature": "sch_name",
+                "name": "Middle School Attendance Zone"
             },
-            "geometry": "wkb_geometry",
-            "table": "D_SAZ_M_Context",
-            "id": "mx_id",
-            "feature": "sch_name",
-            "name": "Middle School Attendance Zone"
-        },
-        {
-            "select": {
-                "attr": "mx_id, sch_name, ed_level, nces_schid, nces_disid"
+            {
+                "attributes": [
+                    "mx_id", "sch_name", "nces_schid", "nces_disid", "relver"
+                ],
+                "geometry": "wkb_geometry",
+                "table": "x_saz_p_reveal",
+                "id": "mx_id",
+                "feature": "sch_name",
+                "name": "Primary School Attendance Zone"
             },
-            "geometry": "wkb_geometry",
-            "table": "D_SAZ_P_Context",
-            "id": "mx_id",
-            "feature": "sch_name",
-            "name": "Primary School Attendance Zone"
-        },
-        {
-            "select": {
-                "attr": "mx_id, distname, dist_schs, dist_enrl, state"
+            {
+                "attributes": [
+                    "mx_id", "distname", "dist_schs", "dist_enrl", "state", "relver"
+                ],
+                "geometry": "wkb_geometry",
+                "table": "x_sds_reveal",
+                "id": "mx_id",
+                "feature": "distname",
+                "name": "School District"
             },
-            "geometry": "wkb_geometry",
-            "table": "D_SDS_Context",
-            "id": "mx_id",
-            "feature": "distname",
-            "name": "School District"
-        },
-        {
-            "select": {
-                "attr": "zipcrid, cr, zip, name, state, bizcnt"
+            {
+                "attributes": [
+                    "zipcrid", "cr", "zip", "name", "state", "relver"
+                ],
+                "geometry": "wkb_geometry",
+                "table": "x_crs_reveal",
+                "id": "zipcrid",
+                "feature": "zipcrid",
+                "name": "Carrier Route"
             },
-            "geometry": "wkb_geometry",
-            "table": "D_CRS_Context",
-            "id": "zipcrid",
-            "feature": "zipcrid",
-            "name": "Carrier Route"
-        },
-        {
-            "select": {
-                "attr": "zip, name, countyname, state, bizcnt"
+            {
+                "attributes": [
+                    "zip", "name", "countyname", "state", "relver"
+                ],
+                "geometry": "wkb_geometry",
+                "table": "x_zip_reveal",
+                "id": "zip",
+                "feature": "zip",
+                "name": "ZIP Code"
             },
-            "geometry": "wkb_geometry",
-            "table": "D_ZIP_Context",
-            "id": "zip",
-            "feature": "zip",
-            "name": "ZIP Code"
-        }
-    ]
+            {
+                "attributes": [
+                    "obj_id", "obj_name", "brand_name", "city"
+                ],
+                "geometry": "wkb_geometry",
+                "table": "x_aut_build_reveal",
+                "id": "obj_id",
+                "feature": "obj_name",
+                "name": "Auto Dealership Building"
+            },
+            {
+                "attributes": [
+                    "obj_id", "obj_name", "brand_name", "city", "relver"
+                ],
+                "geometry": "wkb_geometry",
+                "table": "x_aut_lot_reveal",
+                "id": "obj_id",
+                "feature": "obj_name",
+                "name": "Auto Dealership Lot"
+            }
+        ]  
+    }
 }
