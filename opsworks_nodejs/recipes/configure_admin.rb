@@ -13,20 +13,30 @@ node[:deploy].each do |application, deploy|
     variables(:database => deploy[:database], :memcached => deploy[:memcached], :layers => node[:opsworks][:layers])
   end
 	
-  Chef::Log.info("Create modules dir in /srv/www/feedback_admin")
+  Chef::Log.info("Create modules dir in /srv/www/feedback_admin/releases")
 
-  directory "/srv/www/feedback_admin/modules" do
+  directory "/srv/www/feedback_admin/releases/modules" do
 	action :create
     mode '0755'
     owner deploy[:user]
     group deploy[:group]
   end
 	
-  Chef::Log.info("Create config.json in /srv/www/feedback_admin/modules")
+  Chef::Log.info("Create config.json in /srv/www/feedback_admin/releases/modules")
 
-  template "/srv/www/feedback_admin/modules/config.json" do
+  template "/srv/www/feedback_admin/releases/modules/config.json" do
 	cookbook 'opsworks_nodejs'
     source 'config.json.erb'
+    mode '0644'
+    owner deploy[:user]
+    group deploy[:group]
+  end
+	
+  Chef::Log.info("Create debugger.js in /srv/www/feedback_admin/releases/modules")
+
+  template "/srv/www/feedback_admin/releases/modules/debugger.js" do
+	cookbook 'opsworks_nodejs'
+    source 'debugger.js.erb'
     mode '0644'
     owner deploy[:user]
     group deploy[:group]
