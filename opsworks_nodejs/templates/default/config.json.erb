@@ -147,20 +147,20 @@
                     "nid", "neighborhd", "place", "state", "relver"
                 ],
                 "geometry": "wkb_geometry",
-                "table": "x_nbr_m_reveal",
+                "table": "x_nbr_n_reveal",
                 "id": "nid",
                 "feature": "neighborhd",
-                "name": "Neighborhood Macro"
+                "name": "Neighborhood N-type"
             },
             {
                 "attributes": [
                     "nid", "neighborhd", "place", "state", "relver"
                 ],
                 "geometry": "wkb_geometry",
-                "table": "x_nbr_n_reveal",
+                "table": "x_nbr_m_reveal",
                 "id": "nid",
                 "feature": "neighborhd",
-                "name": "Neighborhood"
+                "name": "Neighborhood M-type"
             },
             {
                 "attributes": [
@@ -170,7 +170,7 @@
                 "table": "x_nbr_r_reveal",
                 "id": "nid",
                 "feature": "neighborhd",
-                "name": "Neighborhood Residential"
+                "name": "Neighborhood R-type"
             },
             {
                 "attributes": [
@@ -180,21 +180,21 @@
                 "table": "x_nbr_s_reveal",
                 "id": "nid",
                 "feature": "neighborhd",
-                "name": "Neighborhood Subdivision"
+                "name": "Neighborhood S-type"
             },
             {
                 "attributes": [
-                    "nid", "neighborhd", "metro", "state", "relver"
+                    "nid", "neighborhd", "metro", "relver"
                 ],
                 "geometry": "wkb_geometry",
                 "table": "x_res_reveal",
                 "id": "nid",
                 "feature": "neighborhd",
-                "name": "Residential"
+                "name": "Plus Residential"
             },
             {
                 "attributes": [
-                    "obj_id", "obj_name", "metro", "relver"
+                    "obj_id", "obj_name", "obj_subtyp", "metro", "relver"
                 ],
                 "geometry": "wkb_geometry",
                 "table": "x_hsp_reveal",
@@ -204,7 +204,7 @@
             },
             {
                 "attributes": [
-                    "obj_id", "obj_name", "metro", "relver"
+                    "obj_id", "obj_name", "obj_subtyp", "metro", "relver"
                 ],
                 "geometry": "wkb_geometry",
                 "table": "x_sch_grn_reveal",
@@ -274,7 +274,7 @@
             },
             {
                 "attributes": [
-                    "mx_id", "distname", "dist_schs", "dist_enrl", "state", "relver"
+                    "mx_id", "distname", "dist_schs", "dist_enrl", "relver"
                 ],
                 "geometry": "wkb_geometry",
                 "table": "x_sds_reveal",
@@ -284,7 +284,7 @@
             },
             {
                 "attributes": [
-                    "zipcrid", "cr", "zip", "name", "state", "relver"
+                    "cr", "zip", "name", "state", "relver"
                 ],
                 "geometry": "wkb_geometry",
                 "table": "x_crs_reveal",
@@ -314,7 +314,7 @@
             },
             {
                 "attributes": [
-                    "obj_id", "obj_name", "brand_name", "city", "relver"
+                    "obj_id", "obj_name", "brand_name", "metro", "relver"
                 ],
                 "geometry": "wkb_geometry",
                 "table": "x_aut_lot_reveal",
