@@ -13,63 +13,24 @@ node[:deploy].each do |application, deploy|
     variables(:database => deploy[:database], :memcached => deploy[:memcached], :layers => node[:opsworks][:layers])
   end
 	
-#  Chef::Log.info("Create modules dir in /srv/www/feedback_admin/releases")
+#  Chef::Log.info("Create modules dir in #{deploy[:deploy_to]}/releases")
 #
-#  directory "/srv/www/feedback_admin/releases/modules" do
+#  directory "#{deploy[:deploy_to]}/releases/modules" do
 #	action :create
 #    mode '0755'
 #    owner deploy[:user]
 #    group deploy[:group]
 #  end
 	
-  Chef::Log.info("Create config.json in /srv/www/feedback_admin/current/modules")
+  Chef::Log.info("Create config.json in #{deploy[:deploy_to]}/current/modules")
 
-  template "/srv/www/feedback_admin/current/modules/config.json" do
+  template "#{deploy[:deploy_to]}/current/modules/config.json" do
 	cookbook 'opsworks_nodejs'
     source 'config.json.erb'
     mode '0644'
     owner deploy[:user]
     group deploy[:group]
+    variables(:DB => deploy[:environment_variables][:DBNAME], :DBHOST => deploy[:environment_variables][:DBHOST], :ELASTICIP => deploy[:environment_variables][:ELASTICIP])
   end
-	
-#  Chef::Log.info("Create debugger.js in /srv/www/feedback_admin/releases/modules")
-#
-#  template "/srv/www/feedback_admin/releases/modules/debugger.js" do
-#	cookbook 'opsworks_nodejs'
-#    source 'debugger.js.erb'
-#    mode '0644'
-#    owner deploy[:user]
-#    group deploy[:group]
-#  end
-	
-#  Chef::Log.info("Create Contact.js in /srv/www/feedback_admin/releases/modules")
-#
-#  template "/srv/www/feedback_admin/releases/modules/Contact.js" do
-#	cookbook 'opsworks_nodejs'
-#    source 'Contact.js.erb'
-#    mode '0644'
-#    owner deploy[:user]
-#    group deploy[:group]
-#  end
-	
-#  Chef::Log.info("Create Request.js in /srv/www/feedback_admin/releases/modules")
-#
-#  template "/srv/www/feedback_admin/releases/modules/Request.js" do
-#	cookbook 'opsworks_nodejs'
-#    source 'Request.js.erb'
-#    mode '0644'
-#    owner deploy[:user]
-#    group deploy[:group]
-#  end
-	
-#  Chef::Log.info("Create Summary.js in /srv/www/feedback_admin/releases/modules")
-#
-#  template "/srv/www/feedback_admin/releases/modules/Summary.js" do
-#	cookbook 'opsworks_nodejs'
-#    source 'Summary.js.erb'
-#    mode '0644'
-#    owner deploy[:user]
-#    group deploy[:group]
-#  end
   
 end
