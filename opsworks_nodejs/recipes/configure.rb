@@ -16,23 +16,24 @@ node[:deploy].each do |application, deploy|
   end
 
 #  log 'message' do
-#	message 'Create config.json in /srv/www/feedback_debug/current/modules'
+#	message 'Create config.json in #{deploy[:deploy_to]}/current/modules'
 #	level :info
 #  end
 	
-  Chef::Log.info("Create config.json in /srv/www/feedback_debug/current/modules")
+  Chef::Log.info("Create config.json in #{deploy[:deploy_to]}/current/modules")
 
-  template "/srv/www/feedback_debug/current/modules/config.json" do
+  template " #{deploy[:deploy_to]}/current/modules/config.json" do
 	cookbook 'opsworks_nodejs'
     source 'config.json.erb'
     mode '0644'
     owner deploy[:user]
     group deploy[:group]
+    variables(:ELASTICIP => deploy[:environment_variables][:ELASTICIP])
   end
 	
-  Chef::Log.info("Remove config.js in /srv/www/feedback_debug/current/modules")
+  Chef::Log.info("Remove config.js in  #{deploy[:deploy_to]}/current/modules")
 
-  file "/srv/www/feedback_debug/current/modules/config.js" do
+  file " #{deploy[:deploy_to]}/current/modules/config.js" do
 	action :delete
     owner deploy[:user]
     group deploy[:group]
