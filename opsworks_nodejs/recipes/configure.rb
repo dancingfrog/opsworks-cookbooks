@@ -28,7 +28,7 @@ node[:deploy].each do |application, deploy|
     mode '0644'
     owner deploy[:user]
     group deploy[:group]
-    variables(:ELASTICIP => deploy[:environment_variables][:ELASTICIP])
+    variables(:DB => deploy[:environment_variables][:DBNAME], :DBHOST => deploy[:environment_variables][:DBHOST], :ELASTICIP => deploy[:environment_variables][:ELASTICIP])
   end
 	
   Chef::Log.info("Remove config.js in  #{deploy[:deploy_to]}/current/modules")

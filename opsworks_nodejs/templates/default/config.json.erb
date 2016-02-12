@@ -22,7 +22,7 @@
     "shortWait": 2500,
 
     "feedback.maponics.com": {
-        "host": "172.31.32.247",
+        "host": "<%= @DBHOST %>",
         "instance": "maponics_feedback",
         "username": "maponics",
         "password": "maponics2013",
@@ -60,8 +60,46 @@
         }
     },
     "localhost": {
-        "host": "172.31.32.247",
-        "instance": "maponics_source",
+        "host": "<%= @DBHOST %>",
+        "instance": "<%= @DB %>",
+        "username": "maponics",
+        "password": "maponics2013",
+        "contact": {
+            "schema": "contact",
+            "table": "Contacts"
+        },
+        "manager": {
+            "schema": "contact",
+            "table": "Managers"
+        },
+        "organization": {
+            "schema": "contact",
+            "table": "Organizations"
+        },
+        "request": {
+            "schema": "contact",
+            "table": "Requests"
+        },
+        "developer": {
+            "schema": "developer",
+            "table": "Developers"
+        },
+        "note": {
+            "schema": "resource",
+            "table": "Notes"
+        },
+        "resource": {
+            "schema": "resource",
+            "table": "Summary"
+        },
+        "shadow": {
+            "schema": "shadow",
+            "table": "Words"
+        }
+    },
+    "127.0.0.1": {
+        "host": "<%= @DBHOST %>",
+        "instance": "<%= @DB %>",
         "username": "maponics",
         "password": "maponics2013",
         "contact": {
@@ -98,8 +136,8 @@
         }
     },
     "<%= @ELASTICIP %>": {
-        "host": "172.31.32.247",
-        "instance": "maponics_feedback",
+        "host": "<%= @DBHOST %>",
+        "instance": "<%= @DB %>",
         "username": "maponics",
         "password": "maponics2013",
         "contact": {
