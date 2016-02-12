@@ -22,7 +22,7 @@ node[:deploy].each do |application, deploy|
 	
   Chef::Log.info("Create config.json in #{deploy[:deploy_to]}/current/modules")
 
-  template " #{deploy[:deploy_to]}/current/modules/config.json" do
+  template "#{deploy[:deploy_to]}/current/modules/config.json" do
 	cookbook 'opsworks_nodejs'
     source 'config.json.erb'
     mode '0644'
