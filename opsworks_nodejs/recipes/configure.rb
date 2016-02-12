@@ -1,3 +1,5 @@
+Chef::Log.info("Feedback IP: #{node[:deploy]['feedback_debug'][:environment_variables][:ELASTICIP]}")
+
 node[:deploy].each do |application, deploy|
   if deploy[:application_type] != 'nodejs'
     Chef::Log.debug("Skipping deploy::nodejs application #{application} as it is not a node.js app")

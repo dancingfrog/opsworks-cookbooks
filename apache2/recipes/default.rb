@@ -45,14 +45,13 @@ end
 
 bash 'logdir_existence_and_restart_apache2' do
   code <<-EOF
-until
-  ls -la #{node[:apache][:log_dir]}
-do
-  echo "Waiting for #{node[:apache][:log_dir]}..."
-  sleep 1
-done
-EOF
-
+    until
+      ls -la #{node[:apache][:log_dir]}
+    do
+      echo "Waiting for #{node[:apache][:log_dir]}..."
+      sleep 1
+    done
+  EOF
   action :nothing
   notifies :restart, resources(:service => 'apache2')
   timeout 70
@@ -214,7 +213,7 @@ else
   default_site_config = "#{node[:apache][:dir]}/sites-available/default"
 end
 template default_site_config do
-  source 'reveal-site.erb'
+  source 'default-site.erb'
   owner 'root'
   group 'root'
   mode 0644
