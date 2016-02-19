@@ -23,6 +23,7 @@ package 'apache2' do
     package_name 'httpd'
   when 'debian'
     package_name 'apache2'
+    #version '2.4.7-1ubuntu4.9'
   end
   action :install
 end
